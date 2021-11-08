@@ -1,21 +1,9 @@
-import Link from 'next/link';
+import Header from "../components/Header/Header"
 
 const Home = () => {
   return (
     <>
-      <header>
-        <ul>
-          <li>
-            <Link href="/">Home</Link>
-          </li>
-          <li>
-            <Link href="/blog">Blog</Link>
-          </li>
-          <li>
-            <a href="/users">Users</a>
-          </li>
-        </ul>
-      </header>
+      <Header />
       Welcome Next.js
     </>
   )
