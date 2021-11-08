@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <>
       <Header />
-      Welcome Next.js
+      <h1 className="title">Welcome Next.js</h1>
     </>
   )
 }
