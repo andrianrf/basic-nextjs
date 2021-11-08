@@ -1,7 +1,9 @@
+import Layout from "../../components/Layout/Layout";
+
 export default function index() {
     return (
-        <div>
+        <Layout>
             Users Page
-        </div>
+        </Layout>
     )
 }
