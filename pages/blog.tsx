@@ -1,11 +1,41 @@
 import Layout from "../components/Layout/Layout";
 
-export default function blog() {
+interface Post {
+    id: number;
+    title: string;
+    body: string;
+}
+
+interface BlogProps {
+    dataBlog: Post[]
+}
+
+export default function blog(props: BlogProps) {
+
+    const { dataBlog } = props;
+
     return (
         <Layout pageTitle="Blog">
-        <div className="title">
-            Blog Page
-        </div>
+            {
+                dataBlog.map((res) => (
+                    <div key={res.id} className="card">
+                        <p>{res.title}</p>
+                        <p>{res.body}</p>
+                    </div>
+                ))
+            }
         </Layout>
     )
+}
+
+export async function getServerSideProps() {
+
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    const dataBlog = await res.json();
+
+    return {
+        props: {
+            dataBlog
+        }
+    };
 }
